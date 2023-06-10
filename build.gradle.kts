@@ -44,4 +44,3 @@ tasks.jacocoTestReport {
         xml.required.set(true)
     }
 }
-
