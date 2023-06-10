@@ -38,3 +38,10 @@ tasks.withType<Test> {
         junitXml.required.set(true)
     }
 }
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
+}
+
