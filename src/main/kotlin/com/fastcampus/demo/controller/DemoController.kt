@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 class DemoController {
     @GetMapping("/")
     fun home(): Map<String, String> {
-        
-        
-        
-        
-        
         return mapOf(
             "version" to "1.0",
             "hello" to "world"
