@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("org.springframework.boot") version "2.7.12"
@@ -32,12 +33,21 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.CHECKSTYLE)
+    }
+}
+    
+    
 tasks.withType<Test> {
     useJUnitPlatform()
     reports {
         junitXml.required.set(true)
     }
 }
+
 
 tasks.jacocoTestReport {
     reports {
